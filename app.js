@@ -1,7 +1,6 @@
 var url = "http://bcw-getter.herokuapp.com/?url=";
 var url2 = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
 var apiUrl = url + encodeURIComponent(url2);
-var x =0;
 // $.getJSON(apiUrl,function(data){
 //     var players = data.body.players;
 //     var positions = {};
@@ -44,7 +43,10 @@ var PlayersService = function(endpointUri){
 		});
 	};	
 	loadPlayersData();
-}
-var playerService = new PlayersService(apiUrl);
-var sf = playerService.getPlayersByTeam("SF");
-console.log(sf);
+};
+$('#button1').on('click', function() {
+	alert('you clicked the button');
+	var playerService = new PlayersService(apiUrl);
+	var sf = playerService.getPlayersByTeam("SF");
+	console.log(sf);
+});
