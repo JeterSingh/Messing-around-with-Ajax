@@ -44,9 +44,9 @@ var PlayersService = function(endpointUri){
 	};	
 	loadPlayersData();
 };
+var playerService = new PlayersService(apiUrl);
 $('#button1').on('click', function() {
-	alert('you clicked the button');
-	var playerService = new PlayersService(apiUrl);
+	alert('you clicked the button');	
 	var sf = playerService.getPlayersByTeam("SF");
 	console.log(sf);
 });
